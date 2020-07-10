@@ -12,7 +12,7 @@ func main() {
 	smsgo.Use(bao)
 
 	// there we decide to use smsbao by something
-	bao = smsgo.Get("smsbao.com")
+	bao, _ = smsgo.Get("smsbao.com")
 	_ = bao.SendTextMessage("13122223333", "test message", nil)
 	// async send
 	go bao.SendTextMessage("13122223333", "async send", nil)
